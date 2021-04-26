@@ -1,0 +1,34 @@
+<div class="row me-0">
+  <div class="col-md-8 offset-md-2">
+    <div class="input-group my-3">
+      <input type="text" [(ngModel)]="SearchElem" class="form-control" type="search" placeholder="Telefon Numarası Giriniz"
+        aria-label="Search">
+      <button class="btn btn-outline-success" type="submit" (click)="SearchForSubs()">Ara</button>
+    </div>
+    <div class="row" *ngIf="CheckIfPostsArray()">
+      <div class="col-md-4 my-2" *ngFor="let subscription of posts">
+        <div class="card">
+          <img src="../../assets/user.png" class="card-img-top" alt="user.png">
+          <div class="card-body">
+            <div class="card-text text-center">
+              <p><strong>Subscription Id : </strong>{{ subscription.subscriptionId}}</p>
+              <p><strong>Name : </strong>{{ subscription.fullaname}}</p>
+              <p><strong>Address : </strong>{{ subscription.address}}</p>
+              <p><strong>Location : </strong>{{ subscription.locationName}}</p>
+              <p><strong>SubCity : </strong>{{ subscription.subCityName}}</p>
+              <p><strong>CityName : </strong>{{ subscription.cityName}}</p>
+              <p><strong>Brand : </strong>{{ subscription.brand}}</p>
+              <p><strong>Phone Number : </strong>{{ subscription.phoneNumber}}</p>
+              <p><strong>Distributor Number : </strong>{{ subscription.distributorNumber}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center" *ngIf="!CheckIfPostsArray()">
+      {{ posts }}
+    </div>
+
+  </div>
+</div>

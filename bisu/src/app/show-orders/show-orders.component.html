@@ -1,0 +1,32 @@
+<div class="row me-0">
+  <div class="col-md-8 offset-md-2">
+    <div class="input-group my-3">
+      <input type="text" [(ngModel)]="SearchElem" class="form-control" type="search" placeholder="Abonelik Numarası Giriniz"
+        aria-label="Search">
+      <button class="btn btn-outline-success" type="submit" (click)="SearchForOrders()">Ara</button>
+    </div>
+    <div class="row" *ngIf="CheckIfPostsArray()">
+      <div class="col-md-4 my-2" *ngFor="let order of posts">
+        <div class="card">
+          <img src="../../assets/damacana.jpg" class="card-img-top" alt="damacana.jpg">
+          <div class="card-body">
+            <div class="card-text text-center">
+              <p><strong>Order Id : </strong>{{ order.orderId}}</p>
+              <p><strong>Subscription Id : </strong>{{ order.subscriptionId}}</p>
+              <p><strong>Delivery Date : </strong>{{ order.deliveryDate}}</p>
+              <p><strong>Payment Method : </strong>{{ order.paymentMethod}}</p>
+              <p><strong>Products : </strong>{{ order.products}}</p>
+              <p><strong>Total Amount : </strong>{{ order.totalAmount}}</p>
+              <p><strong>Status: </strong>{{ order.status}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center" *ngIf="!CheckIfPostsArray()">
+      {{ posts }}
+    </div>
+
+  </div>
+</div>
