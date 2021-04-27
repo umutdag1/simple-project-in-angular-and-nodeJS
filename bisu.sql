@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
   PRIMARY KEY (`orderId`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 
--- bisu.orders: ~6 rows (yaklaşık) tablosu için veriler indiriliyor
+-- bisu.orders: ~5 rows (yaklaşık) tablosu için veriler indiriliyor
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
 INSERT INTO `orders` (`orderId`, `subscriptionId`, `deliveryDate`, `paymentMethod`, `products`, `totalAmount`, `status`) VALUES
 	(1, 'abc123', '2017-05-02 00:13:00', 'BKM', '[{"product":"19 lt damanaca", "quantity": 1 }]', 10.00, 'NEW'),
